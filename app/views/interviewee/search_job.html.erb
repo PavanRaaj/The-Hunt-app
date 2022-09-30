@@ -1,0 +1,31 @@
+<div class="poster_list_jobs">
+    <div class="layer">
+        get your job
+    </div>
+</div>
+
+<h1>Search Results</h1>
+<div class="jobs_main_container">
+    <% @searched_job.each do |search_job| %>
+<div class="jobs_list_container">
+    <div class="job_items"> 
+        <div class="Job_title">
+           <%= search_job.job_tittle%>
+        </div>
+        <ul>
+            <li><%= search_job.eligibility%></li>
+            <li><%= search_job.company_name%></li>
+            <li><%= search_job.country%></li>
+        </ul>
+        <a href="/interviewee/<%= search_job.id %>">
+        <div class="view_details_div">
+           View Details
+        </div>
+        </a>
+    </div>
+    
+</div>
+
+<%end%>
+
+</div>

@@ -1,0 +1,141 @@
+// Place all the styles related to the manager controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.nav_item_application_manager{
+    position: relative;
+    right: 38%;
+}
+.nav_item_interviews{
+    position: relative;
+    right: 23%;
+}
+.nav_item_register_login{
+    position: relative;
+    right: 9%;
+}
+
+
+
+
+.manager-home-page-div {
+    position: relative;
+    display: flex;
+    top: 150px;
+}
+
+
+
+
+.about_manager_div{
+    background-color: #ffff;
+    position: relative;
+    box-shadow: 3px 3px 6px #e8e8e8,
+    -3px -3px 6px rgb(246, 246, 246);
+    width: 1130px;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    left: 20%;
+    border-radius: 25px;
+}
+.profile-img-div {
+    position: relative;
+    width: 40%;
+    // background: #1dd3fd;
+}
+.profile-img-div img {
+    position: absolute;
+    left: 8%;
+    width: 360px;
+    height: 400px;
+}
+.profile-img {
+    position: relative;
+    width: 390px;
+    height: 300px;
+    border-radius: 17px;
+    top: 5%;
+    left: 14%;
+}
+
+.profile-content-div {
+    position: relative;
+    top: -9%;
+    left: 8%;
+}
+
+.manager-profile {
+    font-size: 1rem;
+    color: #afb8bd;
+    font-weight: 600;
+    margin-top: 20%;
+    letter-spacing: 1px;
+}
+.manager-profile-span {
+    font-size: 1.8rem;
+    color: black;
+    font-weight: 600;
+    margin-left: 1%;
+    letter-spacing: 1px;
+}
+
+
+// add jobs
+
+.form_main_div_add_jobs{
+    margin-top: 5%;
+}
+.Add_job_and_clear_buttons_div{
+    display: flex;
+}
+.buttons_in_add_page{
+    position: relative;
+    left: 23%;
+}
+.add_job_button{
+    position: relative;
+    right: 5%;
+}
+
+// list in add_page
+
+.jobs_main_container_manager{
+    margin-top: 4%;
+}
+
+.delete_job_manager{
+    border: 1px solid #fb246a;
+    color: #fb246a;
+}
+
+.delete_job_manager a:link{  
+    color: #fb246a;
+}
+
+.delete_job_manager a:link:hover{  
+    color: white;
+}
+
+
+.delete_job_manager:hover {
+    background-color: #fb246a;
+    color: white;
+}
+
+
+.jobs_table{
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+.all_jobs_delete_button{
+    width: 150px !important;
+    position: relative;
+    left: 45%;
+}
+
+
+
+
+

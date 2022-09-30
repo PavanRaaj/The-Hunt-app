@@ -1,0 +1,25 @@
+<%# <h1>PasswordResets#new</h1>
+<p>Find me in app/views/password_resets/new.html.erb</p> %>
+
+<p class="sign_up_heading" >Reset Password</p>
+
+
+<div class="form_main_div">
+<%= form_tag password_resets_path, :method => :post do %>
+
+<% flash.each do |key, value| %>  
+  <%= content_tag(:div, class: "alert alert-#{key}") do %>  
+    <p><%= value %></p>  
+  <% end %>  
+<% end %>
+
+  <div class='field'>
+  
+    <%= text_field_tag :email, params[:email],placeholder:"Mail Address", class: 'input_feilds' %>
+  </div>
+    <div class='submit_button_div_signup_form'>
+    <%= submit_tag "Reset Password", class: "submit_button_signup_form reset_password_button  button_slide slide_right" %>
+  </div>
+<% end %>
+
+</div>

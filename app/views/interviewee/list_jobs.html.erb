@@ -1,0 +1,92 @@
+ <nav class="nav_bar_interviewee_page">
+    <span class="the_hunt_logo_span">
+      <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height:
+      "80") %>
+    </span>
+    <span class="the_hunt_logo_text"> The Hunt </span>
+    
+    <span class="nav_items nav_item_home"> Home </span> 
+    
+    <a href="/interviewee/list_jobs">
+      <span class="nav_items nav_item_job"> Find a Job </span>
+    </a>
+    <a href="/page/reviews">
+    <span class="nav_items nav_item_interviews_scheduled">
+      Reviews  
+    </span>
+    </a>
+    <span class="nav_items">
+      <% if current_user %>
+      <div class="dropdown">
+        <span>
+          <%= image_tag('image.png',class: "user_image",onclick: "dropdwn()" )
+          %>
+        </span>
+
+        <div class="dropdown-content" id="dropdown-content">
+          <div class="dropbtn_btn">
+            <button class="dropbtn">
+              <%= image_tag('profile1.jpg',class: "profile_image") %><%=
+              current_user.user_name %>
+            </button>
+          </div>
+          <div>
+            <span class="logout_content">
+              <%= link_to "Log Out", logout_path, data: {confirm: 'You will be logged out?'}, class: "logout_button" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <% else %> <%= link_to "LogIn", login_path %> <% end %>
+    </span>
+  </nav>
+
+<div class="poster_list_jobs">
+    <div class="layer">
+        get your job
+    </div>
+</div>
+
+<div class="jobs_main_container">
+    <% Job.all.each do |job| %>
+<div class="jobs_list_container">
+    <div class="job_items"> 
+        <div class="Job_title">
+           <%= job.job_tittle%>
+        </div>
+        <ul>
+            <li><%= job.eligibility%></li>
+            <li><%= job.company_name%></li>
+            <li><%= job.country%></li>
+        </ul>
+        <a href="/interviewee/<%= job.id %>">
+        <div class="view_details_div">
+           View Details
+        </div>
+        </a>
+    </div>
+    
+</div>
+
+<%end%>
+
+</div>
+
+
+
+
+
+<script>
+  function dropdwn() {
+    document.getElementById("dropdown-content").style.display = "block";
+  }
+
+  window.onclick = function (e) {
+    if (!e.target.matches(".user_image")) {
+      var myDropdown = document.getElementById("dropdown-content");
+      if ((myDropdown.style.display = "block")) {
+        myDropdown.style.display = "none";
+      }
+    }
+  };
+</script>

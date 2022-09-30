@@ -1,0 +1,60 @@
+<%# <h1>Manager#index</h1>
+<p>Find me in app/views/manager/index.html.erb</p> %>
+
+<nav class="nav_bar_interviewee_page">
+    <span class="the_hunt_logo_span">
+        <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height: "80") %>
+    </span>
+    <span class="the_hunt_logo_text">
+        The Hunt
+    </span>
+    <a href="/manager/add_jobs">
+     <span class="nav_items nav_item_home">
+        Jobs 
+     </span>
+    </a>
+     <a href="/manager/applicants">
+     <span class="nav_items nav_item_application_manager">
+        Applications
+    </span>
+    </a>
+     <a href="/page/reviews">
+    <span class="nav_items nav_item_interviews">
+       Reviews
+    </span>
+   </a>
+    <span class="nav_items nav_item_register nav_item_register_login button_slide slide_right">
+       <% if current_user %>  
+         <%= link_to "Log Out", logout_path, data: {confirm:
+        'You will be logged out?'}, class: "logout_button" %> 
+        <% else %>   
+        <%= link_to "LogIn", login_path %>  
+        <% end %>  
+    </span>
+
+</nav>
+
+
+<div class="manager-home-page-div">
+        <div class="about_manager_div">
+            <div class="profile-img-div">
+                <%= image_tag('manager.png',class: "profile-img") %>
+            </div>
+
+
+            <div class="profile-content-div">
+            <div class="manager-profile">Name</div>
+           
+            <span class="manager-profile-span"><%= current_user.user_name if current_user %></span>
+            <div class="manager-profile">Email</div>
+            
+            <span class="manager-profile-span"><%= current_user.email if current_user%></span>
+            <div class="manager-profile">Contact</div>
+            
+            <span class="manager-profile-span"><%= current_user.contact_number if current_user%></span>
+        </div>
+        </div>
+    </div>
+
+<!-- <p class="sign_up_heading">Page is being build...</p> -->
+

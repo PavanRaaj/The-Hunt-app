@@ -1,0 +1,64 @@
+<nav class="nav_bar_interviewee_page">
+    <span class="the_hunt_logo_span">
+        <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height: "80") %>
+    </span>
+    <span class="the_hunt_logo_text">
+        The Hunt
+    </span>
+    <a href="/manager/add_jobs">
+     <span class="nav_items nav_item_home">
+        Jobs 
+     </span>
+    </a>
+     <a href="#">
+     <span class="nav_items nav_item_application_manager">
+        Applications
+    </span>
+    </a>
+      <a href="/page/reviews">
+    <span class="nav_items nav_item_interviews">
+       Reviews
+    </span>
+   </a>
+    <span class="nav_items nav_item_register nav_item_register_login button_slide slide_right">
+       <% if current_user %>  
+         <%= link_to "Log Out", logout_path, data: {confirm:
+        'You will be logged out?'}, class: "logout_button" %> 
+        <% else %>   
+        <%= link_to "LogIn", login_path %>  
+        <% end %>  
+    </span>
+
+</nav>
+
+<p class="sign_up_heading">Applicants Details</p>
+
+<div class="jobs_main_container jobs_main_container_manager">
+    <% @filtered_applications_array.each do |job| %>
+  <div class="jobs_list_container">
+    <div class="job_items"> 
+        <% user = User.find(job.users_id) %>
+        <% jobs = Job.find(job.jobs_id) %>
+        <div class="Job_title">
+        <strong>Name: </strong> <%= user.user_name %>
+        </div>
+        <ul>
+           
+            <li><%= job.education%></li>
+            <li><%= jobs.job_tittle %></li>
+            <!-- <li><%= job.alternate_mobile_number%></li> -->
+            <li><%= job.address%></li>
+        </ul>
+       
+        <div class="view_details_div">
+         <%= link_to "Resume", job.attachment_url %>
+        </div>
+       
+    </div>
+    
+  </div>
+
+
+ <% end %>  
+
+</div>

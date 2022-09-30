@@ -1,0 +1,35 @@
+
+
+<p class="sign_up_heading users_heading">Users</p>
+<table class="main_table">
+   
+  <thead>
+    <tr>
+      <th class="th_width"><span class="table_text">User name</span> </th>
+      <th class="th_width"> <span class="table_text">Contact number</span> </th>
+      <th><span class="table_text">Email</span> </th>
+      <th><span class="table_text">Role</span> </th>
+      <th><span class="table_text">No. of logins</span> </th>
+      <th><span class="table_text">Actions</span> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td> <span class="table_text"><%= user.user_name %></span></td>
+        <td> <span class="table_text"><%= user.contact_number %></span></td>
+        <td class="td_email_width"> <span class="table_text"><%= user.email %></span></td>
+        <td class="th_width"> <span class="table_text"><%= user.role %></span></td>
+        <td class="th_width"> <span class="table_text"><%= LoginCounter.find_by(user_id: user.id).no_of_logins %></span></td>
+     
+        
+        
+        <td class="th_width"> <span class="table_text"> <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'This lesds to removal user permanently, Are you sure want to proceed?' } %> </span></td>
+      </tr>
+    <% end %>
+  </tbody>
+   
+
+</table>
+

@@ -1,0 +1,108 @@
+// body {
+//   background-color: #fff;
+//   color: #333;
+//   margin: 33px; }
+
+// body, p, ol, ul, td {
+//   font-family: verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px; }
+
+// pre {
+//   background-color: #eee;
+//   padding: 10px;
+//   font-size: 11px; }
+
+// a {
+//   color: white;
+//   text-decoration: none;
+//  }
+
+// a:visited {
+//   color: #666; }
+
+// a:hover {
+//   color: #fff;
+//  }
+
+// th {
+//   padding-bottom: 5px; }
+
+// td {
+//   padding: 0 5px 7px; }
+
+// div.field,
+// div.actions {
+//   margin-bottom: 10px; }
+
+// #notice {
+//   color: green; }
+
+// .field_with_errors {
+//   padding: 2px;
+//   background-color: red;
+//   display: table; }
+
+// #error_explanation {
+//   width: 450px;
+//   border: 2px solid red;
+//   padding: 7px 7px 0;
+//   margin-bottom: 20px;
+//   background-color: #f0f0f0; }
+
+// #error_explanation h2 {
+//   text-align: left;
+//   font-weight: bold;
+//   padding: 5px 5px 5px 15px;
+//   font-size: 12px;
+//   margin: -7px -7px 0;
+//   background-color: #c00;
+//   color: #fff; }
+
+// #error_explanation ul li {
+//   font-size: 12px;
+//   list-style: square; }
+
+// label {
+//   display: block; }
+
+.nav_item_register_index_signup{
+  position: relative;
+  right:  0%;
+}
+.nav_item_about_us{
+  position: relative;
+  right: 25%;
+}
+.nav_item_contact{
+  position: relative;
+  right: 13%;
+}
+
+// users  page for admin
+.users_heading{
+  margin-top: 3% !important;
+}
+
+table, th, td {
+  border:1px solid black;
+ margin: 1%;
+}
+.main_table{
+ margin-left: 18%;
+}
+
+
+.table_text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-left: 2%;
+}
+
+.th_width{
+  width: 150px;
+}
+.td_email_width{
+  width: 400px;
+}

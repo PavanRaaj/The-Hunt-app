@@ -1,0 +1,115 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  background-color: #ebeefe;
+}
+.form_main_div {
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgb(230, 229, 229);
+  position: relative;
+  width: 25%;
+  height: 100%;
+//   margin-top: 5%;
+  left: 38%;
+  padding: 1%;
+}
+.field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#input_feilds{
+    width: 400px;
+  height: 50px;
+  font-size: 18px;
+  padding-left: 15px;
+}
+.input_feilds {
+  width: 400px;
+  height: 50px;
+  font-size: 18px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+select{
+    width: 400px;
+    height: 50px;
+    font-size: 18px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+  }
+
+.submit_button_div_signup_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.submit_button_signup_form {
+  width: 120px;
+  height: 45px;
+  border: none;
+  outline: none;
+  background-color: #fb246a;
+  color: white;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.already_had_account_text{
+    position: relative;
+    font-size: 23px;
+    margin-top: 3%;
+    margin-left: 42%;
+}
+.sign_up_heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8%;
+  font-size: 43px;
+  font-weight: 600;
+}
+
+
+// review page
+
+.review_heading{
+  margin-top: 3%;
+}
+.review_bar{
+  font-size: 20px !important;
+}
+.review_bar strong{
+font-size: 26px !important;
+}
+
+.review_list_container{
+  width: 75% !important;
+  margin-left: 15% ;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
+
+.review_items{
+  padding: 1% 1% 1% 2%;
+}
+
+.form_main_div_reviews{
+  width: 40%;
+  left: 30%;
+}
+
+.review_feild{
+  width: 700px;
+  height: 100px;
+}
+
+.buttons_in_review_page{
+  left: 25%;
+}
+

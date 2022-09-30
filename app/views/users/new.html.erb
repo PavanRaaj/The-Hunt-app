@@ -1,0 +1,25 @@
+<nav class="nav_bar_interviewee_page">
+    <span class="the_hunt_logo_span">
+        <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height: "80") %>
+    </span>
+    <span class="the_hunt_logo_text">
+        The Hunt
+    </span>
+     <span class="nav_items nav_item_about_us">
+        About us
+     </span>
+     
+     <span class="nav_items nav_item_contact">
+        Contact Us
+    </span>
+
+    <span class="nav_items nav_item_register nav_item_register_index_signup button_slide slide_right">
+       <%= link_to "LogIn", login_path  %>  
+    </span>
+
+</nav>
+<p class="sign_up_heading">Sign Up</p>
+
+<%= render 'form', user: @user %>
+
+<p class="already_had_account_text">Already had an account? <%= link_to "LogIn", login_path  %></p> 

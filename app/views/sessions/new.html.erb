@@ -1,0 +1,35 @@
+<%# <h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p> %>
+
+
+<p class="sign_up_heading" >LogIn</p>   
+
+<div class="form_main_div">
+
+<%= form_tag sessions_path do %>   
+
+<% flash.each do |key, value| %>  
+  <%= content_tag(:div, class: "alert alert-#{key}") do %>  
+    <p><%= value %></p>  
+  <% end %>  
+<% end %> 
+
+<div class="field">   
+  
+  <%= text_field_tag :email, nil, class: 'input_feilds',placeholder:"Mail Address", autofocus: true, required:"true "%>   
+</div> 
+
+<div class="field">     
+     
+  <%= password_field_tag :password, nil, class: 'input_feilds',placeholder:"Password", required:"true" %>   
+</div>   
+
+  <div class="submit_button_div_signup_form">   
+    <%= submit_tag "Log In", class: "submit_button_signup_form button_slide slide_right" %>   
+</div>   
+<% end %>  
+
+</div>
+
+<p class="already_had_account_text forget_password_text">Forget your Password? <%= link_to "Click Here", new_password_reset_path  %></p> 
+

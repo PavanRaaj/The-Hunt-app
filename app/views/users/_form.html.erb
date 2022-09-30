@@ -1,0 +1,48 @@
+
+<div class="form_main_div">
+
+
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :user_name, placeholder:"User Name", class:"input_feilds", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.telephone_field :contact_number, placeholder:"Contact Number", class:"input_feilds" %>
+  </div>
+
+  <div class="field">
+    <%= form.select :role, options_for_select([["Manager"],["Interviewee"]]), { :class => 'input_feilds' } %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :email, placeholder:"Mail Address", class:"input_feilds" %>
+  </div>
+
+  <div class="field">
+    <%= form.password_field :password, placeholder:"Password", class:"input_feilds" %>
+  </div>
+
+  <div class="field">
+    <%= form.password_field :password_confirmation, placeholder:"Repat the Password", class:"input_feilds" %>
+  </div>
+
+  <div class="submit_button_div_signup_form">
+    <%= form.submit "Sign up", class: "submit_button_signup_form button_slide slide_right"  %>
+  </div>
+<% end %>
+
+
+</div>

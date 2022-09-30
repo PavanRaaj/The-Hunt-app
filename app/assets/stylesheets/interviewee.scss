@@ -1,0 +1,352 @@
+// Place all the styles related to the interviewee controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.interviewee_home_body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(interviewee.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-color: brown;
+}
+.the_hunt_logo_span {
+  position: absolute;
+  left: 1%;
+}
+.the_hunt_logo_text {
+  position: relative;
+  font-size: 330%;
+  font-weight: bolder;
+  color: black;
+  left: 5%;
+}
+.nav_bar_interviewee_page {
+  background-color: white;
+  border-bottom: 3px solid rgba(238, 230, 230, 0.801);
+  height: 80px;
+}
+.nav_items {
+  position: relative;
+  float: right;
+  font-size: 23px;
+  top: 25%;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+}
+.nav_item_home {
+  position: relative;
+  right: 50%;
+}
+.nav_item_job {
+  position: relative;
+  right: 38%;
+}
+.nav_item_interviews_scheduled {
+  position: relative;
+  right: 19%;
+}
+
+.nav_item_register {
+  position: relative;
+  background-color: #fb246a;
+  padding: 10px;
+  top: 15%;
+  right: -1%;
+  color: white;
+}
+.user_image{
+  width: 40px;
+  height: 40px;
+  margin-left: 80px;
+  border-radius: 50%;
+  margin-top: 2%;
+  cursor: pointer;
+}
+.profile_image {
+  position: absolute;
+  left: 4%;
+  width: 22px;
+  height: 23px;
+}
+.dropbtn {
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding: 13px 16px;
+  width: 200px;
+  color: black;
+  background: transparent;
+  text-align: center;
+  border: none;
+}
+.dropbtn_index_page{
+  font-weight: 600;
+  font-size: 1.3rem;
+  width: 200px;
+  color: black;
+  background: transparent;
+  text-align: center;
+  border: none;
+}
+
+.dropbtn:hover{
+  background-color: #fb246a;
+  color: white;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  top: 28%;
+}
+.logout_image {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  left: 105px;
+  top: 100%;
+  border-radius: 3px;
+  height: auto;
+  min-width: 160px;
+  text-align: center;
+  z-index: 1;
+}
+.dropdown-content a {
+  padding: 13px 16px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+a{
+  text-decoration: none;
+}
+.dropdown-content a:hover {
+  background-color: #fb246a;
+  cursor: pointer;
+
+}
+
+.button_slide {
+  color: #fff;
+  border-radius: 0px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #da2461;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 #da2461;
+}
+
+.interviewee_page_content {
+  position: relative;
+  top: 18%;
+  float: left;
+  left: 15%;
+  color: #28395a;
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 1.2;
+}
+
+.search_box_car_listing_page_div {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 1px 1px rgb(230, 229, 229);
+  height: 8%;
+  width: 33%;
+  top: 65%;
+  left: 15%;
+}
+
+.search_box_car_listing_page {
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 77px;
+  width: 610px;
+  font-size: 18px;
+  font-weight: 400;
+  padding-left: 18px;
+}
+.apply_filter_button {
+  width: 180px;
+  height: 77px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border: none;
+  position: relative;
+  float: right;
+  bottom: 99%;
+  background-color: #fb246a;
+}
+.apply_filter_button:hover {
+  background-color: #da2461;
+  cursor: pointer;
+}
+
+.logout_button {
+  color: white;
+  text-decoration: none;
+}
+.logout_button:hover {
+  color: white;
+}
+
+// list jobs
+
+.poster_list_jobs {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-image: url(jobs.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.layer {
+  background-color: rgba(31, 43, 123, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jobs_main_container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+}
+.jobs_list_container {
+  position: relative;
+  width: 50%;
+  height: 15%;
+  margin-left: 25%;
+  background-color: white;
+}
+.job_items {
+  padding: 2% 0 0 4%;
+}
+.Job_title {
+  color: #28395a;
+  font-size: 34px;
+}
+ul {
+  position: relative;
+  display: flex;
+  margin-top: 1%;
+  left: 2%;
+  color: #808080;
+  font-size: 20px;
+}
+ul,
+li {
+  list-style: none;
+  position: relative;
+  margin-left: 5%;
+}
+.view_details_div {
+  position: absolute;
+  width: 18%;
+  height: 30%;
+  left: 75%;
+  margin-top: -8%;
+  color: #8b92dd;
+  display: block;
+  border: 1px solid #8b92dd;
+  border-radius: 30px;
+  padding: 3px 33px;
+  text-align: center;
+  cursor: pointer;
+}
+.view_details_div:hover {
+  background-color: #8b92dd;
+  color: white;
+}
+
+.job_details_main_div {
+  position: absolute;
+ 
+  width: 90%;
+  height: 60%;
+  margin-top: 1%;
+  left: 2%;
+}
+.job_details_heading{
+  position: relative;
+  left: 0%;
+  font-size: 50px;
+  color: #28395a;
+  font-weight: 900;
+  line-height: 1.2;
+  display: flex;
+  justify-content: center;
+align-items: center;
+}
+.job_tittle_div{
+  font-size: 35px;
+  margin-top: 3%;
+}
+.job_tittle_div strong{
+  color: #28395a;
+font-size: 35px;
+}
+.manger_name_show{
+  margin-top: 1%;
+}
+.eligibility_company_country_main_div{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  font-size: 30px;
+  margin-top: 1%;
+  margin-left: -30px;
+}
+.eligibility_company_country_main_div span{
+  margin-left: 30px;
+}
+.eligibility_company_country_main_div strong{
+  color: #28395a;
+font-size: 35px;
+}
+.about_job_div{
+font-size: 25px;
+}
+
+.apply_button{
+  position: relative;
+  width: 200px;
+  height: 50px;
+  padding: 6px 0 0 8px;
+  color: white;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border: none;
+  background-color: #fb246a;
+  left: 40%;
+}
+
+
+
+

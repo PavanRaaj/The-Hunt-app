@@ -1,0 +1,68 @@
+<nav class="nav_bar_interviewee_page">
+    <span class="the_hunt_logo_span">
+        <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height: "80") %>
+    </span>
+    <span class="the_hunt_logo_text">
+        The Hunt
+    </span>
+     <span class="nav_items nav_item_about_us">
+        About us
+     </span>
+     <span class="nav_items nav_item_contact">
+        Reviews
+    </span>
+    <span class="nav_items nav_item_register nav_item_register_index_signup button_slide slide_right">
+       Login  
+    </span>
+
+</nav>
+
+<div class="form_main_div form_main_div_add_jobs form_main_div_reviews">
+    <%= form_with model: @review, url:'/page/review_details' do |form| %>
+
+         <div>
+         <%= form.text_area  :review, placeholder:"Please give your reviews", class:"input_feilds review_feild" %>
+         </div>
+   
+         <div class="Add_job_and_clear_buttons_div">
+           <div class="submit_button_div_signup_form buttons_in_add_page buttons_in_review_page ">
+               <%= form.submit "Add Review", class:"submit_button_signup_form add_job_button update_password_button button_slide slide_right" %>
+             </div>
+             
+             <div class="submit_button_div_signup_form buttons_in_add_page buttons_in_review_page">
+               <%= submit_tag("Clear Review", { :name => 'reset', :id => 'reset', :type => 'reset', :class => 'submit_button_signup_form update_password_button button_slide slide_right'}) %>
+             </div>
+         </div>
+         
+        
+       
+     <%end%>
+    </div>
+
+<p class="sign_up_heading review_heading">Reviews</p>
+
+<div class="jobs_main_container jobs_main_container_manager">
+    <% Review.all.each do |review| %>
+<div class="jobs_list_container review_list_container">
+    <div class="review_items">
+    <% user = User.find(review.user_id) %>
+        <div class="Job_title">
+         <strong>Name:</strong>  <%= user.user_name %>
+        </div>
+        <div class="Job_title review_bar">
+         <strong>Role:</strong> <%= user.role %>
+        </div>
+        
+            <div class="Job_title review_bar">
+            <strong>Review:</strong>  <%=review.review %>
+            </div>
+     
+        
+        
+    </div>
+    
+</div>
+
+<%end%>
+
+</div>

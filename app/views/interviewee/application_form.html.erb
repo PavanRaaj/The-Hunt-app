@@ -1,0 +1,110 @@
+ <nav class="nav_bar_interviewee_page">
+    <span class="the_hunt_logo_span">
+      <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height:
+      "80") %>
+    </span>
+    <span class="the_hunt_logo_text"> The Hunt </span>
+    
+    <span class="nav_items nav_item_home"> Home </span> 
+    
+    <a href="/interviewee/list_jobs">
+      <span class="nav_items nav_item_job"> Find a Job </span>
+    </a>
+    <a href="/page/reviews">
+    <span class="nav_items nav_item_interviews_scheduled">
+      Reviews  
+    </span>
+    </a>
+    <span class="nav_items">
+      <% if current_user %>
+      <div class="dropdown">
+        <span>
+          <%= image_tag('image.png',class: "user_image",onclick: "dropdwn()" )
+          %>
+        </span>
+
+        <div class="dropdown-content" id="dropdown-content">
+          <div class="dropbtn_btn">
+            <button class="dropbtn">
+              <%= image_tag('profile1.jpg',class: "profile_image") %><%=
+              current_user.user_name %>
+            </button>
+          </div>
+          <div>
+            <span class="logout_content">
+              <%= link_to "Log Out", logout_path, data: {confirm: 'You will be logged out?'}, class: "logout_button" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <% else %> <%= link_to "LogIn", login_path %> <% end %>
+    </span>
+  </nav>
+
+<p class="sign_up_heading">Application Form</p>
+
+<div class="form_main_div form_main_div_add_jobs">
+ <%= form_with model: @applicant, url:"/interviewee/applicants_details/#{params[:id]}" do |form| %>
+
+       <div class="field">
+      <%= form.telephone_field :alternate_mobile_number, placeholder:"Alternate Mobile Number", class:"input_feilds", autofocus: true %>
+      </div>
+
+    <div class="field">
+    <%= form.file_field :attachment, class:"input_feilds" %>  
+    </div>
+      <div class="field">
+      <%= form.text_area :address, placeholder:"Address", class:"input_feilds" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_field :education, placeholder:"Education", class:"input_feilds" %>
+      </div>
+
+      <div class="Add_job_and_clear_buttons_div">
+        <div class="submit_button_div_signup_form buttons_in_add_page">
+            <%= form.submit "Apply Job", class:"submit_button_signup_form add_job_button button_slide slide_right" %>
+          </div>
+          
+          <div class="submit_button_div_signup_form buttons_in_add_page">
+            <%= submit_tag("CLEAR", { :name => 'reset', :id => 'reset', :type => 'reset', :class => 'submit_button_signup_form button_slide slide_right'}) %>
+          </div>
+      </div>
+      
+     
+    
+  <%end%>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+  function dropdwn() {
+    document.getElementById("dropdown-content").style.display = "block";
+  }
+
+  window.onclick = function (e) {
+    if (!e.target.matches(".user_image")) {
+      var myDropdown = document.getElementById("dropdown-content");
+      if ((myDropdown.style.display = "block")) {
+        myDropdown.style.display = "none";
+      }
+    }
+  }
+</script>

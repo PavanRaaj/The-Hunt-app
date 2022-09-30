@@ -1,0 +1,103 @@
+<nav class="nav_bar_interviewee_page">
+    <span class="the_hunt_logo_span">
+        <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height: "80") %>
+    </span>
+    <span class="the_hunt_logo_text">
+        The Hunt
+    </span>
+    <a href="/manager/add_jobs">
+     <span class="nav_items nav_item_home">
+        Jobs 
+     </span>
+    </a>
+     <a href="/manager/applicants">
+     <span class="nav_items nav_item_application_manager">
+        Applications
+    </span>
+    </a>
+      <a href="/page/reviews">
+    <span class="nav_items nav_item_interviews">
+       Reviews
+    </span>
+   </a>
+    <span class="nav_items nav_item_register nav_item_register_login button_slide slide_right">
+       <% if current_user %>  
+         <%= link_to "Log Out", logout_path, data: {confirm:
+        'You will be logged out?'}, class: "logout_button" %> 
+        <% else %>   
+        <%= link_to "LogIn", login_path %>  
+        <% end %>  
+    </span>
+
+</nav>
+
+
+
+<div class="form_main_div form_main_div_add_jobs">
+ <%= form_with model: @job, url:'/manager/add_job' do |form| %>
+      <div class="field">
+      <%= form.text_field :manager_name, placeholder:"Manager Name", class:"input_feilds" , autofocus: true %>
+      </div>
+
+      <div class="field">
+      <%= form.text_field :eligibility, placeholder:"Eligibility", class:"input_feilds" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_field :job_tittle, placeholder:"Job Tittle", class:"input_feilds" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_area  :about_job, placeholder:"About Job", class:"input_feilds" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_field :company_name, placeholder:"Company Name", class:"input_feilds" %>
+      </div>
+      
+      <div class="field">
+      <%= form.text_field :country, placeholder:"Country Located", class:"input_feilds" %>
+      </div>
+
+      <div class="Add_job_and_clear_buttons_div">
+        <div class="submit_button_div_signup_form buttons_in_add_page">
+            <%= form.submit "Add Job", class:"submit_button_signup_form add_job_button button_slide slide_right" %>
+          </div>
+          
+          <div class="submit_button_div_signup_form buttons_in_add_page">
+            <%= submit_tag("CLEAR", { :name => 'reset', :id => 'reset', :type => 'reset', :class => 'submit_button_signup_form button_slide slide_right'}) %>
+          </div>
+      </div>
+      
+     
+    
+  <%end%>
+ </div>
+
+<table class="jobs_table">
+    <tr>
+        <th ><span class="table_text">Tick</span></th>
+        <th class="th_width"><span class="table_text">Job Title</span> </th>
+        <th class="th_width"><span class="table_text">Eligibility</span></th>
+        <th class="th_width"><span class="table_text">Company Name</span> </th>
+        <th class="th_width"><span class="table_text">Country</span> </th>
+        <th class="th_width"><span class="table_text">Action</span> </th>
+    </tr>
+    <% @jobs.each do |job| %>
+      <tr>
+       <%= form_with(url: "/job_delete/add/#{job.id}", method: :post) do |form| %>
+       <td><span class="table_text"><%= check_box 'selected', 'result', {onclick: "this.form.submit()", checked: (@array_returned.include? job.id.to_s)? true : false}, 1, 0 %></span></td>
+       <% end %>
+       <td><%= job.job_tittle%></td>
+       <td><%= job.eligibility%></td>
+       <td><%= job.company_name%></td>
+       <td><%= job.country%></td>
+       <td> <%= link_to "Delete", "/delete_job/#{job.id}",method: :delete, data: {confirm:
+        'Job will be deleted Permanently?'} %></td>
+    </tr>
+    <% end %>
+</table>
+<%= form_with(url: "/job_delete", method: :delete) do |form| %>
+<%= form.submit "Delete Jobs", class:"submit_button_signup_form all_jobs_delete_button  button_slide slide_right" %>
+<% end %>
+
