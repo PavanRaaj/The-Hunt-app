@@ -21,7 +21,7 @@
     <%= form_with model: @review, url:'/page/review_details' do |form| %>
 
          <div>
-         <%= form.text_area  :review, placeholder:"Please give your reviews", class:"input_feilds review_feild" %>
+         <%= form.text_area  :review, placeholder:"Please give your reviews", class:"input_feilds review_feild", autofocus: true, required:"true" %>
          </div>
    
          <div class="Add_job_and_clear_buttons_div">

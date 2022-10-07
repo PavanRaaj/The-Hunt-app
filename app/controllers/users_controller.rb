@@ -22,9 +22,9 @@ class UsersController < ApplicationController
   end
 
   # POST /users
+  # method used to registartion and sending mails
   def create
     @user = User.new(user_params)
-     
     if @user.save
       UserMailer.registration_confirmation(@user).deliver_now
       # session[:user_id] = @user.id 
@@ -50,6 +50,7 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
+  # method used check th token and activate th email id
   def confirm_email
     user = User.find_by_confirm_token(params[:id])
     if user
@@ -64,7 +65,7 @@ class UsersController < ApplicationController
 end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+   
     def set_user
       @user = User.find(params[:id])
     end

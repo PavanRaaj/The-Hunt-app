@@ -3,11 +3,13 @@ class PageController < ApplicationController
   def index
   end
 
+  
   def new_review
     @review = Review.new
     render 'page/reviews'
   end
 
+  # add reviews to db
   def review_details
     reviews = Review.new(review_params)
     reviews.user_id = current_user.id

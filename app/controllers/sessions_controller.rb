@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
   def new
   end
 
+  # methos used to check mail_id and password for login and also adds on login count and redirect to respective paths 
+  # based on their roles
   def create   
     user = User.find_by_email(params[:email])   
     if user && user.authenticate(params[:password]) 
@@ -38,6 +40,8 @@ class SessionsController < ApplicationController
       render :new   
     end   
   end   
+
+  # action to delete user from sessions and make user log out.
   def destroy   
     session[:user_id] = nil   
     redirect_to login_path, notice: 'Logged out!'   

@@ -6,10 +6,11 @@ class ManagerController < ApplicationController
   end
 
   
-
+  # to ensure only manager enter nto manager portal
   def ensure_manager_logged_in
     redirect_to root_path unless current_user.role == 'Manager'
   end
+
 
   def show
     @job = Job.new
@@ -19,7 +20,7 @@ class ManagerController < ApplicationController
   end
 
 
-
+# method used to add jobs by manager
   def add_job
     jobs = Job.new(job_list_params)
     jobs.users_id = current_user.id
@@ -28,6 +29,7 @@ class ManagerController < ApplicationController
     end
 end
 
+# method to delete a particular job
 def delete_job
   @delete = Job.find(params[:id])
   if @delete.destroy
@@ -35,6 +37,7 @@ def delete_job
   end
 end
 
+# deleting ids stored in array
 def bulk_delete
   arrayofids_to_del_returner.each do |id|
     job_record = Job.find(id)
@@ -44,6 +47,7 @@ def bulk_delete
   redirect_to manager_job_path
 end
 
+# add ids of selected jobs in array
 def bulk_delete_add
   if params[:selected][:result].to_i == 1
   @@arrayofids_to_del << params[:job_id]
@@ -57,6 +61,7 @@ def arrayofids_to_del_returner
   @@arrayofids_to_del
 end
 
+# method used to view the applicants of their jobs
 def applicants
   @filtered_applications_array = []
   ApplicantsDetail.all.each do |application|
@@ -65,13 +70,11 @@ def applicants
       @filtered_applications_array << application
     end
   end
-  # puts ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
-  # puts @filtered_applications_array
 end
 
 
   private
-
+  
   def job_list_params
     params.require(:job).permit(:manager_name, :eligibility, :job_tittle, :about_job, :company_name, :country)
   end

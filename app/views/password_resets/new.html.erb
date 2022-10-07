@@ -15,7 +15,7 @@
 
   <div class='field'>
   
-    <%= text_field_tag :email, params[:email],placeholder:"Mail Address", class: 'input_feilds' %>
+    <%= text_field_tag :email, params[:email],placeholder:"Mail Address", class: 'input_feilds', autofocus: true, required:"true" %>
   </div>
     <div class='submit_button_div_signup_form'>
     <%= submit_tag "Reset Password", class: "submit_button_signup_form reset_password_button  button_slide slide_right" %>

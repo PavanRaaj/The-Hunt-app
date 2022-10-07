@@ -1,9 +1,9 @@
  <nav class="nav_bar_interviewee_page">
     <span class="the_hunt_logo_span">
-      <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height:
+      <a href="/interviewee/index"><%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height:
       "80") %>
     </span>
-    <span class="the_hunt_logo_text"> The Hunt </span>
+    <span class="the_hunt_logo_text"> The Hunt </span></a>
     
     <span class="nav_items nav_item_home"> Home </span> 
     
@@ -59,7 +59,7 @@
             <li><%= job.company_name%></li>
             <li><%= job.country%></li>
         </ul>
-        <a href="/interviewee/<%= job.id %>">
+        <a href="/interviewee/show/<%= job.id %>">
         <div class="view_details_div">
            View Details
         </div>

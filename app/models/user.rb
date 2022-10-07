@@ -19,7 +19,7 @@ class User < ApplicationRecord
     save!(:validate => false)
   end
 
-  # forget password method : 
+  # forget password method which send mail about password reset: 
 
   def send_password_reset
     generate_token(:password_reset_token)
@@ -29,7 +29,6 @@ class User < ApplicationRecord
   end
 
   # This generates a random password reset token for the user
-
   def generate_token(column)
     begin
       self[column] = SecureRandom.urlsafe_base64
@@ -40,7 +39,6 @@ class User < ApplicationRecord
   private
 
   # This generates a random confirmation token for the user
-
     def confirmation_token
       if self.confirm_token.blank?
           self.confirm_token = SecureRandom.urlsafe_base64.to_s

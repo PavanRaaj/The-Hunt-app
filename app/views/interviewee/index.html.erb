@@ -5,10 +5,10 @@
 <div class="interviewee_home_body">
   <nav class="nav_bar_interviewee_page">
     <span class="the_hunt_logo_span">
-      <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height:
+      <a href="/interviewee/index"><%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height:
       "80") %>
     </span>
-    <span class="the_hunt_logo_text"> The Hunt </span>
+    <span class="the_hunt_logo_text"> The Hunt </span></a>
     
     <span class="nav_items nav_item_home"> Home </span> 
     
@@ -63,7 +63,7 @@
         type="search"
         name="q"
         id=""
-        placeholder="Job Tittle"
+        placeholder="Search by job tittle, company name or location"
         class="search_box_car_listing_page"
       />
       <input type="submit" value="Search Jobs" class="apply_filter_button" />

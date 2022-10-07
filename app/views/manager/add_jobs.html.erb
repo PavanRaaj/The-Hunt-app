@@ -1,10 +1,10 @@
 <nav class="nav_bar_interviewee_page">
     <span class="the_hunt_logo_span">
-        <%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height: "80") %>
+        <a href="/manager/index"><%= image_tag('the_hunt.png',class: "the_hunt_logo",width: "80",height: "80") %>
     </span>
     <span class="the_hunt_logo_text">
         The Hunt
-    </span>
+    </span></a>
     <a href="/manager/add_jobs">
      <span class="nav_items nav_item_home">
         Jobs 
@@ -36,27 +36,27 @@
 <div class="form_main_div form_main_div_add_jobs">
  <%= form_with model: @job, url:'/manager/add_job' do |form| %>
       <div class="field">
-      <%= form.text_field :manager_name, placeholder:"Manager Name", class:"input_feilds" , autofocus: true %>
+      <%= form.text_field :manager_name, placeholder:"Manager Name", class:"input_feilds" , autofocus: true, required:"true" %>
       </div>
 
       <div class="field">
-      <%= form.text_field :eligibility, placeholder:"Eligibility", class:"input_feilds" %>
+      <%= form.text_field :eligibility, placeholder:"Eligibility", class:"input_feilds", required:"true" %>
       </div>
 
       <div class="field">
-      <%= form.text_field :job_tittle, placeholder:"Job Tittle", class:"input_feilds" %>
+      <%= form.text_field :job_tittle, placeholder:"Job Tittle", class:"input_feilds", required:"true" %>
       </div>
 
       <div class="field">
-      <%= form.text_area  :about_job, placeholder:"About Job", class:"input_feilds" %>
+      <%= form.text_area  :about_job, placeholder:"About Job", class:"input_feilds", required:"true" %>
       </div>
 
       <div class="field">
-      <%= form.text_field :company_name, placeholder:"Company Name", class:"input_feilds" %>
+      <%= form.text_field :company_name, placeholder:"Company Name", class:"input_feilds", required:"true" %>
       </div>
       
       <div class="field">
-      <%= form.text_field :country, placeholder:"Country Located", class:"input_feilds" %>
+      <%= form.text_field :country, placeholder:"Country Located", class:"input_feilds", required:"true" %>
       </div>
 
       <div class="Add_job_and_clear_buttons_div">
