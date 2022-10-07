@@ -72,7 +72,19 @@ def applicants
   end
 end
 
+def edit
+  @job = Job.find(params[:id])
+  render :edit
+end
 
+def update
+  @job = Job.find(params[:id])
+  if @job.update(params.require(:job).permit(:manager_name, :eligibility, :job_tittle, :about_job, :company_name, :country))
+    redirect_to manager_job_path
+  else
+    render :edit
+  end
+end
   private
   
   def job_list_params

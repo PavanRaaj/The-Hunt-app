@@ -1,0 +1,39 @@
+<h1>Edit To-Do Item</h1>
+
+<div class="form_main_div form_main_div_add_jobs">
+<%= form_with model: @job, url: "/manager/update/#{params[:id]}", method: :patch, local: true do |form| %>
+<div class="field">
+      <%= form.text_field :manager_name, placeholder:"Manager Name", class:"input_feilds" , autofocus: true, required:"true" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_field :eligibility, placeholder:"Eligibility", class:"input_feilds", required:"true" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_field :job_tittle, placeholder:"Job Tittle", class:"input_feilds", required:"true" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_area  :about_job, placeholder:"About Job", class:"input_feilds", required:"true" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_field :company_name, placeholder:"Company Name", class:"input_feilds", required:"true" %>
+      </div>
+      
+      <div class="field">
+      <%= form.text_field :country, placeholder:"Country Located", class:"input_feilds", required:"true" %>
+      </div>
+
+      <div class="Add_job_and_clear_buttons_div">
+        <div class="submit_button_div_signup_form buttons_in_add_page">
+            <%= form.submit "Add Job", class:"submit_button_signup_form add_job_button button_slide slide_right" %>
+          </div>
+          
+          <div class="submit_button_div_signup_form buttons_in_add_page">
+            <%= submit_tag("CLEAR", { :name => 'reset', :id => 'reset', :type => 'reset', :class => 'submit_button_signup_form button_slide slide_right'}) %>
+          </div>
+      </div>
+<% end %>
+</div>

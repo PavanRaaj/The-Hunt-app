@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'manager/index', as: 'manager'
   get 'manager/add_jobs', to: 'manager#show', as: 'manager_job'
   match 'manager/add_job', to: 'manager#add_job', via: :post
+  get 'manager/:id/edit', to: 'manager#edit', as: 'edit_job'
+  patch 'manager/update/:id', to: 'manager#update'
   delete '/delete_job/:id' => 'manager#delete_job'
   get "manager/applicants"
 

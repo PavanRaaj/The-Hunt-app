@@ -81,7 +81,8 @@
         <th class="th_width"><span class="table_text">Eligibility</span></th>
         <th class="th_width"><span class="table_text">Company Name</span> </th>
         <th class="th_width"><span class="table_text">Country</span> </th>
-        <th class="th_width"><span class="table_text">Action</span> </th>
+        <th class="th_width"><span class="table_text">Delete Action</span> </th>
+        <th class="th_width"><span class="table_text">Edit Action</span> </th>
     </tr>
     <% @jobs.each do |job| %>
       <tr>
@@ -94,6 +95,7 @@
        <td><%= job.country%></td>
        <td> <%= link_to "Delete", "/delete_job/#{job.id}",method: :delete, data: {confirm:
         'Job will be deleted Permanently?'} %></td>
+        <td><%= link_to "Edit", edit_job_path(job) %></td>
     </tr>
     <% end %>
 </table>
