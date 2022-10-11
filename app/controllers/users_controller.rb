@@ -50,7 +50,7 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
-  # method used check th token and activate th email id
+  # method used check the token and activate the email id
   def confirm_email
     user = User.find_by_confirm_token(params[:id])
     if user
