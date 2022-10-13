@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/search_job', to: 'interviewee#search_job'
   get "interviewee/application_form/:id", to: 'interviewee#new_applicant' 
   match 'interviewee/applicants_details/:id', to: 'interviewee#applicants_details', via: :post
-  get "interviewee/show/:id", to: "interviewee#show"
+  get "interviewee/:id", to: "interviewee#show"
   
   # bulk delete routes
   post "/job_delete/add/:job_id", to: "manager#bulk_delete_add", as: :job_delete_add
