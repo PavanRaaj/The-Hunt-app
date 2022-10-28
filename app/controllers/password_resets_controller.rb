@@ -5,7 +5,7 @@ class PasswordResetsController < ApplicationController
   end
 
   # checks the email and call send_password_reset method in User model
-  def creat
+  def create
     user = User.find_by_email(params[:email])
     user.send_password_reset if user
     flash[:notice] = 'E-mail sent with password reset instructions.'

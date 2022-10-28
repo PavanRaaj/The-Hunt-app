@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   
   # password_reset routes
   resources :password_resets
+  
   get 'page/reviews', to: 'page#new_review', as: 'review'
   match 'page/review_details', to: 'page#review_details', via: :post
   
